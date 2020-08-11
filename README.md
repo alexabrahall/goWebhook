@@ -16,7 +16,7 @@ will return a bool dependent on success
 
 **EXAMPLES**
 
-`
+```
 package main
 
 import "github.com/alexabrahall/goWebhook"
@@ -37,7 +37,7 @@ func main(){
   fmt.Println("Webhook failed")
 
 }
-`
+```
 
 
 **TODO**
