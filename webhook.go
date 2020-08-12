@@ -68,7 +68,7 @@ func (wh Webhook) AddField(title string, value string, inline bool) {
 }
 
 // final function encodes webhook data and then posts to webhook provided via function args
-func (wh Webhook) SendWebhook(url string) bool {
+func (wh Webhook) SendWebhook(url string) *http.Response {
 	client := &http.Client{}
 
 	webhookData, err := json.Marshal(wh)
@@ -92,8 +92,8 @@ func (wh Webhook) SendWebhook(url string) bool {
 	}
 
 	if webhookPost.StatusCode == 204 {
-		return true
+		return webhookPost
 	} else {
-		return false
+		return webhookPost
 	}
 }
