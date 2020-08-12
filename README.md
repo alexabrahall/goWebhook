@@ -23,7 +23,7 @@ import "github.com/alexabrahall/goWebhook"
 
 func main(){
   hook := goWebhook.CreateWebhook()
-  hook.AddField("New Title","New Value,true)
+  hook.AddField("New Title","New Value",true)
   hook.SendWebook("https://discordapp.com/api/yourwebhook") // no tests to check if webhook was successful
   // or
   webhookReq, err := hook.SendWebook("https://discordapp.com/api/yourwebhook")    // use variable to check if post request was successful
