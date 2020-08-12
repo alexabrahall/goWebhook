@@ -11,7 +11,7 @@ takes the arguments of *title* (string), *value*(string), *inline* (boolean)
 will add a field to the webhook
 
 `goWebhook.SendWebhook(webhookurl)` takes the arguments of *url*(string)
-will return a bool dependent on success
+will return a http.Response
 
 
 **EXAMPLES**
