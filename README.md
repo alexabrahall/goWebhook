@@ -31,10 +31,11 @@ func main(){
   if err !=nil{
   fmt.Println("Unexpected error sending webhook!")      
   
-  if webhookReq{
+  if webhookReq.StatusCode == 204 { //204 status is successful webhook post
   fmt.Println("Webhook sent")
   }else{
   fmt.Println("Webhook failed")
+  fmt.Println(webhookReq.StatusCode)
 
 }
 ```
@@ -43,6 +44,6 @@ func main(){
 **TODO**
 
 -Improve error handling
--Return more data on webhook fail
+
 
 
