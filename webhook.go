@@ -40,7 +40,7 @@ func CreateWebhook() Webhook {
 		Username:  "",
 		AvatarURL: "",
 		Embeds: []Embed{
-			Embed{
+			{
 				Title:     "",
 				URL:       "",
 				Color:     16411130,
@@ -53,9 +53,44 @@ func CreateWebhook() Webhook {
 	return Wh
 }
 
+// add a username to the webhook
+
+func (wh *Webhook) SetWebhookUsername(username string) {
+	wh.Username = username
+}
+
+// add a avatar to the webhook
+
+func (wh *Webhook) SetWebhookAvatarURL(avatarURL string) {
+	wh.AvatarURL = avatarURL
+}
+
+// add a title to the webhook
+
+func (wh *Webhook) SetTitle(title string) {
+	wh.Embeds[0].Title = title
+}
+
+// add a url to the webhook
+
+func (wh *Webhook) SetURL(URL string) {
+	wh.Embeds[0].URL = URL
+}
+
+// set the color of the webhook
+func (wh *Webhook) SetColor(color int) {
+	wh.Embeds[0].Color = color
+}
+
+// adds a thumbnail
+
+func (wh *Webhook) SetThumbnailURL(thumbnailURL string) {
+	wh.Embeds[0].Thumbnail.URL = thumbnailURL
+}
+
 // simple function to add fields
 
-func (wh Webhook) AddField(title string, value string, inline bool) {
+func (wh *Webhook) AddField(title string, value string, inline bool) {
 
 	newField := Fields{
 		Name:   title,
