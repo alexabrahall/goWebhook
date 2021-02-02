@@ -128,7 +128,6 @@ func (wh Webhook) SendWebhook(url string) *http.Response {
 
 	if webhookPost.StatusCode == 204 {
 		return webhookPost
-	} else {
-		return webhookPost
 	}
+	return webhookPost
 }
